@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+  <title>Passwort Vorführung</title>
+</head>
+<body>
+  <nav class="navigation__display">
+    <h4>Passwort Vorführung</h4>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Registrierung</a></li>
+    </ul>
+  </nav>
+  <video autoplay muted loop id="background__video">
+    <source src="contents/vid2.mp4" type="video/mp4">
+  </video>
+
+  <div class="display__container">
+
+    <div class="header__container">
+      <h1 class="headline__register">Registrierung</h1> 
+    </div>
+
+      <form action="/auth/register" method="POST" class="form__container">    {{!-- hier für  GET/ POST in Demo anpassen--}}
+        <div class="mb-3">
+          <label for="name" class="form-label form__text">Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label form__text">Email</label>
+          <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label form__text">Passwort</label>
+          <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <button type="submit" class="button__register">Nutzer registrieren</button>
+      </form>
+
+    {{#if message }}
+      <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+</body>
+</html>
